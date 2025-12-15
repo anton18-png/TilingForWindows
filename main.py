@@ -94,7 +94,7 @@ class TrayApp:
     def create_tray_icon(self):
         """Создает иконку для системного трея"""
         
-        icon_image = Image.open("icon.ico")
+        icon_image = Image.open("C:\\Apps\\TilingForWindows\\icon.ico")
         
         # Создаем меню для иконки в трее
         menu = pystray.Menu(
@@ -137,7 +137,7 @@ class TrayApp:
 
             # Используем батник, чтобы не требовались сторонние зависимости для .lnk
             # content = f'"{python_exe}" "{script_path}"\n'
-            content = f'start "" "C:\\Apps\\TilingForWindows\\TilingForWindows.exe"'
+            content = f'cd C:\\Apps\\TilingForWindows & start "" "C:\\Apps\\TilingForWindows\\TilingForWindows.exe"'
             self.startup_entry.write_text(content, encoding="utf-8")
             print(f"Добавлено в автозагрузку: {self.startup_entry}")
         except Exception as e:
